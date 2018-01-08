@@ -207,7 +207,9 @@ GEM
       nokogiri (~> 1.3)
 
 PLATFORMS
+  ruby
   x86-mingw32
+  x86_64-unknown
 
 DEPENDENCIES
   bcrypt (~> 3.1, >= 3.1.11)
