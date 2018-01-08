@@ -1,0 +1,36 @@
+<div class="container">
+    <div>
+      <% user = current_teacher %>
+      <% x = user.id %>
+      <h2 style="margin-top: 5%;">Profil</h2><br/>
+      <table>
+      <tr>
+        <td>NIS</td>
+        <td>:</td>
+        <td><%= user.nip %></td>
+      </tr>
+
+      <tr>
+        <td>Nama</td>
+        <td>:</td>
+        <td><%= user.nama %></td>
+      </tr>
+
+      <tr>
+        <td>Gender</td>
+        <td>:</td>
+        <td><%= user.jenkel %></td>
+      </tr>
+      
+      <tr>
+        <td>Mata Pelajaran</td>
+        <td>:</td>
+        <td><%= user.mapel %></td>
+      </tr>
+    </table><br/>
+      
+        <%= link_to 'Update', teacher_path(x), class: 'btn btn-primary' %>
+        <%= link_to 'Delete', teacher_path(x), method: :delete, data: {confirm: 'Data Dihapus ? '}, class: 'btn btn-secondary' %>
+    </div>
+    <hr>
+</div>
