@@ -1,7 +1,7 @@
 class CreateUsers < ActiveRecord::Migration[5.1]
   def change
     create_table :users do |t|
-      t.string :noinduk
+      t.bigint :noinduk
       t.string :nama
       t.string :jenkel
       t.string :kelas

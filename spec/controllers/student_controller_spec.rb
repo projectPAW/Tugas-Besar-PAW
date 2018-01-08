@@ -21,7 +21,6 @@ RSpec.describe StudentController, type: :controller do
 						password: 'gian'}		
 			post :tambah, params: params
 			expect(response).to redirect_to(daftarMurid_path)
-
 		end
 	end
 
