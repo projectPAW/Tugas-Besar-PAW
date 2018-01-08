@@ -1,0 +1,30 @@
+<div class="container">
+	<% if user = current_user %>
+		<div class="dashboard" align="center">
+			<h2>Simulasi Ujian Akhir Nasional (UAN) Program Jurusan IPS</h2>
+			<ul>
+				<li><a href="simulasiIPS/Bahasa Indonesia"><img class="menu" alt="Bahasa Indonesia" <%= image_tag 'sastra.png'%>
+			    	<figcaption align="center"><h6>Bahasa Indonesia</h6></figcaption></a></li>
+			    <li><a href="simulasiIPS/Matematika"><img class="menu" alt="Matematika" align="center" <%= image_tag 'matematika.png'%>
+			    	<figcaption align="center"><h6>Matematika</h6></figcaption></a></li>
+			    <li><a href="simulasiIPS/Bahasa Inggris"><img class="menu" alt="Bahasa Inggris" <%= image_tag 'inggris.png'%>
+			    	<figcaption align="center"><h6>Bahasa Asing</h6></figcaption></a></li>
+			    <li><a href="simulasiIPS/Ekonomi"><img class="menu" alt="Ekonomi" <%= image_tag 'ekonomi.png'%>
+			    	<figcaption align="center"><h6>Ekonomi</h6></figcaption></a></li>
+			    <li><a href="simulasiIPS/Geografi"><img class="menu"  alt="Geografi" <%= image_tag 'geografi.png'%>
+			    	<figcaption align="center"><h6>Geografi</h6></figcaption></a></li>
+			    <li><a href="simulasiIPS/Sosiologi"><img class="menu" alt="Sosiologi" <%= image_tag 'sosiologi.png'%>
+			    	<figcaption align="center"><h6>Sosiologi</h6></figcaption></a></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+		<hr>
+
+		<div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint modi ut neque commodi magnam minima esse, quos laudantium molestiae cum, minus excepturi natus, fugiat aperiam error delectus voluptates facere nesciunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis excepturi ratione tenetur dolorem, vero iure velit. Aspernatur, obcaecati corrupti officiis repudiandae, maiores provident, laudantium sit ut aliquid veritatis velit itaque.</p>
+		</div>
+		<div class="clear"></div>
+	<% else %>
+		<h3>Opps!!</h3>
+	<% end %>
+</div>

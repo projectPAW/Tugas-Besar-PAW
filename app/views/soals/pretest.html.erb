@@ -1,0 +1,37 @@
+<div class="container">
+  <% if user = current_user %>
+    <%=form_tag do%>
+      <h5>Final Exam</h5>
+      <% no=1; @soal.each do |p| %> <!--view soal+jawaban-->  
+          <input type="hidden" name="id<%= p.id %>" value="<%=p.id%>" >
+          <%= no %>)
+          <%= p.textsoal %><br/>
+
+          <% x = p.gambar.url(:original) %>
+          
+          <% if x != "/images/original/missing.png"%>
+            <%= image_tag p.gambar.url(:original), style:'width:120px; height: 120px; margin: 10px;' %>
+          <% else %>
+          <% end %>
+
+          <div style="margin: 10px 50px">
+            <input type="radio" name="jawaban<%= p.id %>" value="A"> <%=p.jawaban1 %><br>
+            <input type="radio" name="jawaban<%= p.id %>" value="B"> <%=p.jawaban2 %><br>
+            <input type="radio" name="jawaban<%= p.id %>" value="C"> <%=p.jawaban3 %><br>
+            <input type="radio" name="jawaban<%= p.id %>" value="D"> <%=p.jawaban4 %><br>
+            <input type="radio" name="jawaban<%= p.id %>" value="E"> <%=p.jawaban5 %><br>
+          </div>
+      <% no+=1 end %> 
+      <%= submit_tag "Finish Test", class:"btn btn-custom-green" %>
+      <% if user.jurusan == "IPA" %>
+        <%= link_to "Cancel", simulasiIPA_path, class:'btn btn-danger' %>
+      <% elsif user.jurusan == "IPS"%>
+        <%= link_to "Cancel", simulasiIPS_path, class:'btn btn-danger' %>
+      <% elsif user.jurusan == "Bahasa"%>
+        <%= link_to "Cancel", simulasiBahasa_path, class:'btn btn-danger' %>
+      <% end %>
+    <%end%>
+  <% else %>
+    <h3>Oppss !!</h3>
+  <% end %>
+</div>

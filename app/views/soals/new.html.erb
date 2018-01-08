@@ -1,0 +1,145 @@
+<% if user = current_teacher %>
+<div class="container">
+	<div class="formDaftar">
+	<% no=1; @so.each do |p| %> <!--hitung isi tabel-->	
+	<% no+=1 end %> <!--end hitung isi tabel-->
+		
+		<h3>Tambah Soal</h3>
+		<%= form_for(@soal, url: {action: "create"}, method: "post") do |f| %>
+			
+			<div class="form-group">
+				<label>Jurusan :</label>
+
+				<div class="radio">
+					<%= f.radio_button :jurusan, "IPA", required: true, onclick:"javascript:yesnoCheck();", id:"jurusanIPA" %>
+					<label style="margin-left: 5px">IPA</label>
+				</div>
+				<div class="radio">
+					<%= f.radio_button :jurusan, "IPS", required: true, onclick:"javascript:yesnoCheck();", id:"jurusanIPS" %>
+					<label style="margin-left: 5px">IPS</label>
+				</div>
+				<div class="radio">
+					<%= f.radio_button :jurusan, "Bahasa", required: true, onclick:"javascript:yesnoCheck();", id:"jurusanBahasa" %>
+					<label style="margin-left: 5px">Bahasa</label>
+				</div>
+			</div>
+
+			<div class="form-group" id="jurIPA" style="display:none">
+				<label>Mata Pelajaran : </label>
+				<div class="radio">
+					<%= f.radio_button :mapel, "Bahasa Indonesia", required: true %>
+					<label>Bahasa Indonesia</label>
+				</div>
+				<div class="radio">
+					<%= f.radio_button :mapel, "Matematika", required: true %>
+					<label>Matematika</label>
+				</div>
+				<div class="radio">
+					<%= f.radio_button :mapel, "Bahasa Inggris", required: true %>
+					<label>Bahasa Inggris</label>
+				</div>
+				<div class="radio">
+					<%= f.radio_button :mapel, "Fisika", required: true %>
+					<label>Fisika</label>
+				</div>
+				<div class="radio">
+					<%= f.radio_button :mapel, "Kimia", required: true %>
+					<label>Kimia</label>
+				</div>
+				<div class="radio">
+					<%= f.radio_button :mapel, "Biologi", required: true %>
+					<label>Biologi</label>
+				</div>
+			</div>
+
+			<div class="form-group" id="jurIPS" style="display:none">
+				<label>Mata Pelajaran : </label>
+				<div class="radio">
+					<%= f.radio_button :mapel, "Bahasa Indonesia", required: true %>
+					<label>Bahasa Indonesia</label>
+				</div>
+				<div class="radio">
+					<%= f.radio_button :mapel, "Matematika", required: true %>
+					<label>Matematika</label>
+				</div>
+				<div class="radio">
+					<%= f.radio_button :mapel, "Bahasa Inggris", required: true %>
+					<label>Bahasa Inggris</label>
+				</div>
+				<div class="radio">
+					<%= f.radio_button :mapel, "Ekonomi", required: true %>
+					<label>Ekonomi</label>
+				</div>
+				<div class="radio">
+					<%= f.radio_button :mapel, "Geografi", required: true %>
+					<label>Geografi</label>
+				</div>
+				<div class="radio">
+					<%= f.radio_button :mapel, "Sosiologi", required: true %>
+					<label>Sosiologi</label>
+				</div>
+			</div>
+
+			<div class="form-group" id="jurBahasa" style="display:none">
+				<label>Mata Pelajaran : </label>
+				<div class="radio">
+					<%= f.radio_button :mapel, "Bahasa Indonesia", required: true %>
+					<label>Bahasa Indonesia</label>
+				</div>
+				<div class="radio">
+                    <%= f.radio_button :mapel, "Matematika", required: true %>
+                    <label>Matematika</label>
+                </div>
+                <div class="radio">
+                    <%= f.radio_button :mapel, "Bahasa Inggris", required: true %>
+                    <label>Bahasa Inggris</label>
+                </div>
+                <div class="radio">
+                    <%= f.radio_button :mapel, "Sastra Indonesia", required: true %>
+                    <label>Sastra Indonesia</label>
+                </div>
+                <div class="radio">
+                    <%= f.radio_button :mapel, "Antropologi", required: true %>
+                    <label>Antropologi</label>
+                </div>
+                <div class="radio">
+                    <%= f.radio_button :mapel, "Bahasa Asing", required: true %>
+                    <label>Bahasa Asing</label>
+                </div>
+			</div>
+
+			<div class="form-group">
+				<labek>Naskah Soal :</labek>
+				<div><%= f.text_area :textsoal, placeholder:"....", class:'form-control', required: true, style:"resize:none" %></div>
+			</div>
+			<div class="form-group">
+				<label>Gambar :</label>
+				<div><%= f.file_field :gambar %></div>
+			</div>
+
+			<label>Pilih Jawaban Benar :</label>
+			<div>
+				<%= f.radio_button :jawabanbenar, "A" %> A
+				<%= f.radio_button :jawabanbenar, "B" %> B
+				<%= f.radio_button :jawabanbenar, "C" %> C
+				<%= f.radio_button :jawabanbenar, "D" %> D
+				<%= f.radio_button :jawabanbenar, "E" %> E
+			</div>
+			
+			<div style="margin-top: 10px" class="form-group">
+				<div><%= f.text_field :jawaban1, placeholder:"Jawaban A", class:'form-control' %></div>
+				<div><%= f.text_field :jawaban2, placeholder:"Jawaban B", class:'form-control' %></div>
+				<div><%= f.text_field :jawaban3, placeholder:"Jawaban C", class:'form-control' %></div>
+				<div><%= f.text_field :jawaban4, placeholder:"Jawaban D", class:'form-control' %></div>
+				<div><%= f.text_field :jawaban5, placeholder:"Jawaban E", class:'form-control' %></div>
+			</div>
+
+			<%= f.submit "Submit", class:'btn btn-primary' %>
+			<%= link_to "Back", listSoal_path, class:'btn btn-danger' %>
+		<% end %>
+	</div>
+</div>
+
+<% else %>
+	<h1>Opps!!</h1>
+<% end %>

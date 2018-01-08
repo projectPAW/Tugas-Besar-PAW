@@ -1,0 +1,15 @@
+<% if user = current_user %>
+	<div class="col-sm-3">
+		<div class="list-group" style="float: left; margin: 20px;">
+			<% @materi.each do |f| %>
+				<a href="<%= f.file.url %>" class="list-group-item list-group-item-action" target="pdf"><%=f.judul%></a>
+			<% end %>
+		</div>
+	</div>
+	<div style="margin: 20px;">
+		<iframe name="pdf" src="" width="75%" height="900px"></iframe>
+	</div>
+	<div class="clear"></div>
+<% else %>
+	<h3>Opps!!</h3>
+<% end %>

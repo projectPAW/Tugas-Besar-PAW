@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nip: 1
+  nama: MyString
+  jenkel: MyString
+  mapel: MyString
+  username: MyString
+  password_digest: MyString
+
+two:
+  nip: 1
+  nama: MyString
+  jenkel: MyString
+  mapel: MyString
+  username: MyString
+  password_digest: MyString

@@ -1,0 +1,56 @@
+<div class="container" >
+		<div class="formDaftar">
+			
+			<% flash.each do |type, message| %>
+				<p class="alert alert-success alert-dismissable fade show"><a href="/loginguru" style="float: right">
+				login</a>
+				<strong>Success!</strong><%=message%></p>
+			<%end%>
+			
+			<h2>Registrasi Guru</h2><br/>
+
+			<%= form_for(:teacher, url: {action: "tambah"}, method: "post") do |f| %>
+				<div class="form-group">
+					<%= f.label :NIP %>
+					<%= f.number_field :nip, class:'form-control', required: true %>
+				</div>
+				<div class="form-group">
+					<%= f.label :Nama %>
+					<%= f.text_field :nama, class:'form-control', required: true %>
+				</div>
+
+				<div class="form-group">
+					<%= f.label :Jenis_Kelamin %>
+					
+					<div class="radio">
+						<%= f.radio_button :jenkel, "laki-laki", required: true %><label style="margin-left: 5px">Laki-laki</label>
+					</div>
+					<div class="radio">
+						<%= f.radio_button :jenkel, "laki-laki", required: true %><label style="margin-left: 5px">Perempuan</label>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<%= f.label :Mata_Pelajaran %><br>
+					<%= f.select :mapel, options_for_select(@dfMapel) ,class:'form-control',required: true%>
+				</div>
+
+				<div class="form-group">
+					<%= f.label :Username %>
+					<%= f.text_field :username, class:'form-control', required: true %>
+				</div>
+				<div class="form-group">
+					<%= f.label :Password %>
+					<%= f.password_field :password, class:'form-control', required: true %>
+				</div>
+
+				<%= f.submit "Simpan", class:'btn btn-primary' %>
+				<%= link_to "Batal", loginguru_path, class:'btn btn-danger' %>
+				
+				<div style="float: right">
+					<%= button_tag "Reset", type: :reset, class:'btn btn-light' %>
+				</div>
+			<% end %>
+
+		</div>
+</div>

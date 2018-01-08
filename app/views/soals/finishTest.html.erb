@@ -1,0 +1,33 @@
+<div class="container"> 
+	<%if user =  current_user %>
+			<% jum=0; @soal.each do |p|%> <!--menghitung jumlah soal-->
+			<% jum+=1; end %>  
+
+		    <%= form_tag do %>
+		    	<%= hidden_field_tag :mapel,nil, :value => params[:r32d] %>
+				<%= hidden_field_tag :noinduk,nil, :value => user.noinduk %>
+				<%= hidden_field_tag :nama,nil, :value => user.nama %>
+				<%= hidden_field_tag :totnilai,nil, :value => @ceknilai %>
+		        
+		        <div class="form-group">
+		        <table>
+		        	<tr>
+		        		<td> Mata Pelajaran </td>
+		        		<td>: <%= params[:r32d] %></td>
+		        	</tr>
+		        	<tr>
+		        		<td> Jumlah Soal </td>
+		        		<td>: <%= jum %></td>
+		        	</tr>
+		        </table>
+		        </div>
+		      	
+		      	<div class="form-group">
+		            <%= submit_tag "Submit Test", class:"btn btn-primary" %>
+		            <% link_to "Cancel", pretest_path, class:"btn btn-danger" %>
+		       	</div>
+		    <%end%>  
+	<% else %>
+		<h3>Oppss !!</h3>
+	<% end %>
+</div>

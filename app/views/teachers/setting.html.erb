@@ -1,0 +1,11 @@
+<div class="container">
+	<% if user = current_teacher %>
+		<% x = user.id %>
+
+		<%= link_to image_tag('edit.png'), teacher_path(x) %>
+		<%= link_to image_tag('delete.png'), teacher_path(x), method: :delete, data: {confirm: 'Anda yakin untuk menghapus akun?'} %>
+		<% link_to "Back", dashboardguru_path, class:'btn btn-danger' %>
+	<% else %>
+		<h3>Oppss !!</h3>
+	<% end %>
+</div>

@@ -1,0 +1,20 @@
+<div class="container">
+	<div class="setting">
+	<% user = current_user %> 
+	<% x = user.id %>
+
+		    <%= link_to image_tag('edit.png'), student_path(x)%>
+		    <%= link_to image_tag('delete.png'), student_path(x), method: :delete, data: {confirm: 'Anda yakin untuk menghapus akun?'} %>
+
+		   	<% if user.jurusan == "IPA" %>
+				<% link_to "Back", dashboardIPA_path, class:'btn btn-danger' %>
+			<% elsif user.jurusan == "IPS"%>
+				<% link_to "Back", dashboardIPS_path, class:'btn btn-danger' %>
+			<% elsif user.jurusan == "Bahasa"%>
+				<% link_to "Back", dashboardBahasa_path, class:'btn btn-danger' %>
+			<% end %>
+	</div>
+	
+	<div class="clear"></div>
+	<hr>
+</div>

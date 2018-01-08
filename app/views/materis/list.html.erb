@@ -1,0 +1,41 @@
+<div class="container"><br/><br/>
+  <% if teacher = current_teacher %>
+    <h2>Materi Belajar Siswa</h2><br/><br/>
+    <%= link_to 'Tambah', tambahmateri_path, class: 'btn btn-success' %>
+    <%= link_to 'Kembali', dashboardguru_path, class: 'btn btn-danger' %><br/><br/>
+    <% flash.each do |type, message| %>
+      <p class="alert alert-success alert-dismissable fade show">
+      <strong>Success!</strong><%=message%></p>
+    <%end%>
+    <table class="table table-striped">
+      <thead class="thead-dark">
+      <tr class="bg-primary">
+        <th class="text-center">No</th>
+        <th class="text-center">Jurusan</th>
+        <th class="text-center">Mata Pelajaran</th>
+        <th class="text-center">Judul Materi</th>
+        <th class="text-center">File</th>
+        <th class="text-center">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% no=1; @materi.each do |f| %>
+          <tr>
+            <td><%= no %></td>
+            <td><%= f.jurusan %></td>
+            <td><%= f.mapel %></td>
+            <td><%= f.judul %></td>
+            <td><%= f.file_file_name %></td>
+            <td class="text-center">
+              <% x = f.id %>
+              <%= link_to 'Update', file_path(x), class: 'btn btn-primary' %>
+              <%= link_to 'Delete', file_path(x), method: :delete, data: {confirm: 'Data Dihapus ? '}, class: 'btn btn-secondary' %>
+            </td>
+          </tr>
+      <% no+=1 end %>
+      </tbody>
+    </table>
+  <% else %>
+    <h3>Opps!!</h3>
+  <% end %>
+</div>

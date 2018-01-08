@@ -1,0 +1,62 @@
+<div class="container"><br/><br/>
+  <% if teacher = current_teacher %>
+    <h2>Arsip Soal Siswa</h2><br/><br/>
+    <%= link_to 'Tambah', tambahsoal_path, class: 'btn btn-success' %>
+    <%= link_to 'Kembali', dashboardguru_path, class: 'btn btn-danger' %><br/><br/>
+    
+    <% flash.each do |type, message| %>
+      <p class="alert alert-success alert-dismissable fade show">
+      <strong>Success!</strong><%=message%></p>
+    <%end%>
+    
+    <table class="table table-striped">
+      <thead class="thead-dark">
+      <tr class="bg-primary">
+        <th class="text-center">No</th>
+        <th class="text-center">Jurusan</th>
+        <th class="text-center">Mata Pelajaran</th>
+        <th class="text-center">Text Soal</th>
+        <th class="text-center">Gambar Soal</th>
+        <th class="text-center">Kunci Jawaban</th>
+        <th class="text-center">A</th>
+        <th class="text-center">B</th>
+        <th class="text-center">C</th>
+        <th class="text-center">D</th>
+        <th class="text-center">E</th>
+        <th class="text-center">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% no=1; @soal.each do |f| %>
+          <tr>
+            <td><%= no %></td>
+            <td><%= f.jurusan %></td>
+            <td><%= f.mapel %></td>
+            <td><%= f.textsoal %></td>
+            <td>
+              <% x = f.gambar.url(:original) %>
+              <% if x != "/images/original/missing.png"%>
+                <%= image_tag f.gambar.url(:original), style:'width:60px; height: 60px;' %>
+              <% else %>
+                <div class="text-center">-</div>
+              <% end %>
+            </td>
+            <td><%= f.jawabanbenar %></td>
+            <td><%= f.jawaban1 %></td>
+            <td><%= f.jawaban2 %></td>
+            <td><%= f.jawaban3 %></td>
+            <td><%= f.jawaban4 %></td>
+            <td><%= f.jawaban5 %></td>
+            <td class="text-center">
+              <% x = f.id %>
+              <%= link_to 'Update', soal_path(x), class: 'btn btn-primary' %>
+              <%= link_to 'Delete', soal_path(x), method: :delete, data: {confirm: 'Data Dihapus ? '}, class: 'btn btn-secondary' %>
+            </td>
+          </tr>
+      <% no+=1 end %>
+      </tbody>
+    </table>
+  <% else %>
+    <h3>Opps!!</h3>
+  <% end %>
+</div> 

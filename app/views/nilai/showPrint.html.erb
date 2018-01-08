@@ -1,0 +1,32 @@
+<div class="container">
+<% if user = current_user %>
+	<div id="print" style="padding-top: 60px">
+		<h3>Grades For <%= user.nama %> </h3>
+		<h5>Jurusan : <%= user.jurusan %></h5>
+		
+		<table class="table table-striped">
+		    <thead>
+		      <tr>
+		        <th>Mata Pelajaran</th>
+		        <th>Score</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      	<% total=0; @nilai.each do |f| %>
+		      	<tr>
+			        <td><%= f.mapel %></td>
+			        <td><%= x = f.totnilai %></td>
+		       	</tr>
+		       	<% total+=x end %>
+		       	<tr>
+		       		<td><b>Total</b></td>
+		       		<td><%= total %></td>
+		       	</tr>
+		    </tbody>
+		</table>
+	</div>
+
+<% else %>
+	<h3>Opps !!</h3>
+<% end %>
+</div>

@@ -1,0 +1,156 @@
+<div class="container"> 
+  <% if user = current_user %>
+
+    <h3>Grafik Nilai</h3>
+    <label>Nama Siswa : </label> <%= user.nama %><br>
+    <label>Jurusan : </label> <%= user.jurusan %>
+
+    <div class="progress" style="margin: 10px">  
+      <% nilJan=0; @data.group_by(&:created_at).each do |date, nilai| %>
+        <% x = date.month %>
+        <% if x == 1 %>
+          <% nilai.each do |f| %>
+              <% cek = f.totnilai %>
+          <% nilJan+=cek end %>
+        <% end %>
+      <% end %>
+      <div class="progress-bar" style="width:<%= nilJan %>%">Januari-Poin = <%= nilJan %> </div>
+    </div>
+
+    <div class="progress" style="margin: 10px">
+      <% nilFeb=0; @data.group_by(&:created_at).each do |date, nilai| %>
+        <% x = date.month %>
+        <% if x == 2 %>
+          <% nilai.each do |f| %>
+              <% cek = f.totnilai %>
+          <% nilFeb+=cek end %>
+        <% end %>
+      <% end %>
+      <div class="progress-bar" style="width:<%= nilFeb %>%">Febuari-Poin = <%= nilFeb %></div>
+    </div>
+    
+    <div class="progress" style="margin: 10px">
+      <% nilMar=0; @data.group_by(&:created_at).each do |date, nilai| %>
+        <% x = date.month %>
+        <% if x == 3 %>
+          <% nilai.each do |f| %>
+              <% cek = f.totnilai %>
+          <% nilMar+=cek end %>
+        <% end %>
+      <% end %>
+      <div class="progress-bar" style="width:<%= nilMar %>%">Maret-Poin = <%= nilMar %></div>
+    </div>
+    
+    <div class="progress" style="margin: 10px">
+      <% nilApr=0; @data.group_by(&:created_at).each do |date, nilai| %>
+        <% x = date.month %>
+        <% if x == 4 %>
+          <% nilai.each do |f| %>
+              <% cek = f.totnilai %>
+          <% nilApr+=cek end %>
+        <% end %>
+      <% end %>
+      <div class="progress-bar" style="width:<%= nilApr %>%">April-Poin = <%= nilApr %></div>
+    </div>
+  
+    <div class="progress" style="margin: 10px">
+      <% nilMei=0; @data.group_by(&:created_at).each do |date, nilai| %>
+        <% x = date.month %>
+        <% if x == 5 %>
+          <% nilai.each do |f| %>
+              <% cek = f.totnilai %>
+          <% nilMei+=cek end %>
+        <% end %>
+      <% end %>
+      <div class="progress-bar" style="width:<%= nilMei %>%">Mei-Poin = <%= nilMei %></div>
+    </div>
+    
+    <div class="progress" style="margin: 10px">
+      <% nilJuni=0; @data.group_by(&:created_at).each do |date, nilai| %>
+        <% x = date.month %>
+        <% if x == 6 %>
+          <% nilai.each do |f| %>
+              <% cek = f.totnilai %>
+          <% nilJuni+=cek end %>
+        <% end %>
+      <% end %>
+      <div class="progress-bar" style="width:<%= nilJuni %>%">Juni-Poin = <%= nilJuni %></div>
+    </div>
+
+    <div class="progress" style="margin: 10px">
+      <% nilJuli=0; @data.group_by(&:created_at).each do |date, nilai| %>
+        <% x = date.month %>
+        <% if x == 7 %>
+          <% nilai.each do |f| %>
+              <% cek = f.totnilai %>
+          <% nilJuli+=cek end %>
+        <% end %>
+      <% end %>
+      <div class="progress-bar" style="width:<%= nilJuli %>%">Juli-Poin = <%= nilJuli %></div>
+    </div>
+    
+    <div class="progress" style="margin: 10px">
+      <% nilAgs=0; @data.group_by(&:created_at).each do |date, nilai| %>
+        <% x = date.month %>
+        <% if x == 8 %>
+          <% nilai.each do |f| %>
+              <% cek = f.totnilai %>
+          <% nilAgs+=cek end %>
+        <% end %>
+      <% end %>
+      <div class="progress-bar" style="width:<%= nilAgs %>%">Agustus-Poin = <%= nilAgs %></div>
+    </div>
+
+    <div class="progress" style="margin: 10px">
+      <% nilSep=0; @data.group_by(&:created_at).each do |date, nilai| %>
+        <% x = date.month %>
+        <% if x == 9 %>
+          <% nilai.each do |f| %>
+              <% cek = f.totnilai %>
+          <% nilSep+=cek end %>
+        <% end %>
+      <% end %>
+      <div class="progress-bar" style="width:<%= nilSep %>%">September-Poin = <%= nilSep %></div>
+    </div>
+    
+    <div class="progress" style="margin: 10px">
+      <% nilOkt=0; @data.group_by(&:created_at).each do |date, nilai| %>
+        <% x = date.month %>
+        <% if x == 10 %>
+          <% nilai.each do |f| %>
+              <% cek = f.totnilai %>
+          <% nilOkt+=cek end %>
+        <% end %>
+      <% end %>
+      <div class="progress-bar" style="width:<%= nilOkt %>%">Oktober-Poin = <%= nilOkt %></div>
+    </div>
+
+    <div class="progress" style="margin: 10px">
+      <% nilNov=0; @data.group_by(&:created_at).each do |date, nilai| %>
+        <% x = date.month %>
+        <% if x == 11 %>
+          <% nilai.each do |f| %>
+              <% cek = f.totnilai %>
+          <% nilNov+=cek end %>
+        <% end %>
+      <% end %>
+      <div class="progress-bar" style="width:<%= nilNov %>%">November-Poin = <%= nilNov %></div>
+    </div>
+    
+    <div class="progress" style="margin: 10px">
+      <% nilDes=0; @data.group_by(&:created_at).each do |date, nilai| %>
+        <% x = date.month %>
+        <% if x == 12 %>
+          <% nilai.each do |f| %>
+              <% cek = f.totnilai %>
+          <% nilDes+=cek end %>
+        <% end %>
+      <% end %>
+      <div class="progress-bar" style="width:<%= nilDes %>%">Desember-Poin = <%= nilDes %></div>
+    </div>
+
+  <% else %>
+    <h3>Oppss !!</h3>
+  <% end %>
+
+</div>

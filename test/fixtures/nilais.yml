@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kodesoal: MyString
+  noinduk: MyString
+  nama: MyString
+  totnilai: MyString
+
+two:
+  kodesoal: MyString
+  noinduk: MyString
+  nama: MyString
+  totnilai: MyString

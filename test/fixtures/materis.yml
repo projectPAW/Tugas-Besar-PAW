@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kode: 1
+  mapel: MyString
+  judul: MyString
+  file: 
+
+two:
+  kode: 1
+  mapel: MyString
+  judul: MyString
+  file: 
