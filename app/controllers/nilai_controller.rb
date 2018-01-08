@@ -1,6 +1,6 @@
 class NilaiController < ApplicationController
 	def showNilai
-		@nilai = Nilai.all.where(noinduk: params[:noinduk]).group(:mapel)
+		@nilai = Nilai.all.where(noinduk: params[:noinduk]).group(:mapel)	
 	end
 
 	def showPrint
