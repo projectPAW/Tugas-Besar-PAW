@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20171231084426) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "noinduk"
+    t.bigint "noinduk"
     t.string "nama"
     t.string "jenkel"
     t.string "kelas"
