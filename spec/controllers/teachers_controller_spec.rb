@@ -9,7 +9,7 @@ RSpec.describe TeachersController, type: :controller do
 		end
 	end
 
-	context 'post murid daftar' do
+	context 'post guru daftar' do
 		it 'tambah' do
 			params = {	nip: '12345',
 						nama: 'Coba', 	

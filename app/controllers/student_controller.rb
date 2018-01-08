@@ -20,7 +20,7 @@ class StudentController < ApplicationController
 
 	def update
 		@user = User.find(params[:noinduk])
-		if @user.update(edit_user_params)
+		if @user.update(user_params)
 			redirect_to setting_path
 		else
 			redirect_to setting_path
@@ -57,10 +57,7 @@ class StudentController < ApplicationController
 
 	private
 	def user_params #method menyimpan data
-		params.require(:user).permit(:noinduk, :nama, :jenkel, :kelas, :jurusan, :sekolah, :username, :password)
+		params.permit(:noinduk, :nama, :jenkel, :kelas, :jurusan, :sekolah, :username, :password)
 	end
 	
-	def edit_user_params #method menyimpan data
-		params.require(:user).permit(:noinduk, :nama, :jenkel, :kelas, :jurusan, :sekolah, :username, :password)
-	end
 end

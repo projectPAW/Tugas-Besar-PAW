@@ -43,18 +43,18 @@ RSpec.describe StudentController, type: :controller do
 
 	context 'post murid edit' do
 		it 'editM' do
-			#params = {	noinduk: '1234',
-			#			nama: 'Giansyah', 	
-			#			jenkel: 'Laki-laki', 
-			#			kelas: '3-A',
-			#			jurusan: 'IPA', 
-			#			sekolah: 'SMA Talang Betutu', 
-			#			username: 'giansyah', 
-			#			password: 'gian'}		
-			#User.create(params).save
-			#x = User.last
-			#post :update, params: {noinduk: x.noinduk}
-			#expect(response).to redirect_to(setting_path)
+			params = {	noinduk: '1234',
+						nama: 'Giansyah', 	
+						jenkel: 'Laki-laki', 
+						kelas: '3-A',
+						jurusan: 'IPA', 
+						sekolah: 'SMA Talang Betutu', 
+						username: 'giansyah', 
+						password: 'gian'}		
+			User.create(params).save
+			x = User.last
+			post :update, params: {noinduk: x.noinduk}
+			expect(response).to redirect_to(setting_path)
 		end
 	end
 
