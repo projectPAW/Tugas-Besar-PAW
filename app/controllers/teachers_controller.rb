@@ -91,6 +91,6 @@ class TeachersController < ApplicationController
 
 	private
 	def teacher_params #method menyimpan data
-		params.require(:teacher).permit(:nip, :nama, :jenkel, :mapel, :username, :password)
+		params.permit(:nip, :nama, :jenkel, :mapel, :username, :password)
 	end
 end

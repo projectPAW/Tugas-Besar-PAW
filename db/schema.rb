@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 20171231084426) do
 
   create_table "materis", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "jurusan"
+    t.integer "kode"
     t.string "mapel"
     t.string "judul"
     t.binary "file"
@@ -35,10 +35,8 @@ ActiveRecord::Schema.define(version: 20171231084426) do
   end
 
   create_table "soals", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "jurusan"
-    t.string "mapel"
+    t.string "kode"
     t.string "textsoal"
-    t.binary "gambar"
     t.string "jawabanbenar"
     t.string "jawaban1"
     t.string "jawaban2"
