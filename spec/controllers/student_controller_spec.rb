@@ -23,5 +23,4 @@ RSpec.describe StudentController, type: :controller do
 			expect(response).to redirect_to(daftarMurid_path)
 		end
 	end
-
 end
