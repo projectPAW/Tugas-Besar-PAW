@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   get 'perkembangan/:noinduk', to: 'student#perkembangan'
 
   get 'dashboardguru', to: 'teachers#dashboardguru'
+   get'/profilguru', to:'teachers#profilguru'
   get 'daftarguru', to: 'teachers#guruDaftar'
   post 'daftarguru', to: 'teachers#tambah'
   get 'loginguru', to: 'teachers#loginguru'

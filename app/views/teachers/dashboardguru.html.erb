@@ -1,24 +1,25 @@
 <div class="container">
 	<% if teacher = current_teacher %>
-	<% x = teacher.mapel %>
-	<div class="dashboard">
+	<div class="dashboard" align="center">
 		<ul>
 		    <li><a href="/list"><img alt="library" <%= image_tag 'library.png'%>
 		    	<figcaption align="center"><h6>Tambah Materi</h6></figcaption></a></li>
-		    <li><a href="/listSoal"><img alt="simulation" <%= image_tag 'simulation.png'%>
+		    <li><a href="/listSoal"><img alt="soal" <%= image_tag 'simulation.png'%>
 		    	<figcaption align="center"><h6>Tambah Soal</h6></figcaption></a></li>
-		    <li><a href="MonitorPerkembangan/<%= x %>"><img alt="grafik" <%= image_tag 'chart.png'%>
-		    	<figcaption align="center"><h6>Monitoring Perkembangan</h6></figcaption></a></li>
-		    <li><a href="settingGuru"><img alt="setting" <%= image_tag 'setting.png'%>
-		    	<figcaption align="center"><h6>Pengaturan</h6></figcaption></a></li>
+		    <li><a href="#"><img alt="grafik" <%= image_tag 'chart.png'%>
+		    	<figcaption align="center"><h6>Monitoring</h6></figcaption></a></li>
+		    <li><a href="/profilguru"><img alt="setting" <%= image_tag 'edit.png'%>
+		    	<figcaption align="center"><h6>Profil</h6></figcaption></a></li>
 		</ul>
 	</div>
 	<div class="clear"></div>
 	<hr>
 
-	<div>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint modi ut neque commodi magnam minima esse, quos laudantium molestiae cum, minus excepturi natus, fugiat aperiam error delectus voluptates facere nesciunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis excepturi ratione tenetur dolorem, vero iure velit. Aspernatur, obcaecati corrupti officiis repudiandae, maiores provident, laudantium sit ut aliquid veritatis velit itaque.</p>
+	<div style="height: 500px;">
+		<h5>Selamat Datang di Dashboard Guru</h5>
+		<p>Manfaatkan segala jenis fitur yang tersedia, lakukan persiapan semaksimal mungkin</p>
 	</div>
+	<div class="clear"></div>
 	<div class="clear"></div>
 </div>
 <% else %>
