@@ -41,7 +41,7 @@ Rails.application.routes.draw do
   get 'edit_guru/:id', to: 'teachers#guruEdit', as: :teacher #edit data user
   post 'edit_guru/:id', to: 'teachers#update'
   delete 'edit_guru/:id', to: 'teachers#delete' #delete user
-  get 'MonitorPerkembangan/:mapel', to: 'teachers#monitorPerkembangan', as: :Monitoring
+  get 'MonitorPerkembangan', to: 'teachers#monitorPerkembangan' #, as: :Monitoring
 
   get 'tambahmateri', to: 'materis#new'
   post 'tambahmateri', to: 'materis#create'
