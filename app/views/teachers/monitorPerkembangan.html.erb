@@ -4,17 +4,8 @@
 
 		<% @cekStudent.each do |f| %>
 		<div>
-			<button type="button" style="width: 30%" class="btn btn-primary" data-toggle="collapse" data-target="#demo<%= f.noinduk %>"><%= f.nama %></button>
-		  	<div id="demo<%= f.noinduk %>" class="collapse">
-			    <div class="progress" style="margin: 10px">  
-
-			        <% nilJan=0; @cekStudent.each do |f| %>
-			        	<% cek = f.totnilai %>
-			        <% nilJan+=cek end %>
-
-			    	<div class="progress-bar" style="width:<%= nilJan %>%">Poin = <%= nilJan %> </div>
-			    </div>
-		  	</div>
+			<% x = f.noinduk %>
+			<%= link_to "#{f.nama}", showNilai_path(x), style: 'width: 30%', class: 'btn btn-secondary' %>
 		 </div>
 		<% end %>
 

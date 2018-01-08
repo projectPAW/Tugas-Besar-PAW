@@ -67,7 +67,7 @@ class TeachersController < ApplicationController
 
 	def update
 		@teacher = Teacher.find(params[:id])
-		if @teacher.update(teacher_params)
+		if @teacher.update(edit_teacher_params)
 			redirect_to settingGuru_path
 		else
 			redirect_to settingGuru_path
@@ -86,11 +86,15 @@ class TeachersController < ApplicationController
 	#----------------------------------------------------------------------------------
 
 	def monitorPerkembangan
-		@cekStudent = Nilai.all.where(mapel: params[:mapel]).group(:nama)
+		@cekStudent = User.all
+		#@cekStudent = Nilai.all.where(mapel: params[:mapel]).group(:nama)
 	end
 
 	private
 	def teacher_params #method menyimpan data
 		params.permit(:nip, :nama, :jenkel, :mapel, :username, :password)
+	end
+	def edit_teacher_params #method menyimpan data
+		params.require(:teacher).permit(:nip, :nama, :jenkel, :mapel, :username, :password)
 	end
 end

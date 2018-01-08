@@ -1,7 +1,7 @@
 <div class="container">
   <% if user = current_user %>
     <%=form_tag do%>
-      <h5>Final Exam</h5>
+      <h5>Simulasi Ujian <%= params[:mapel] %></h5>
       <% no=1; @soal.each do |p| %> <!--view soal+jawaban-->  
           <input type="hidden" name="id<%= p.id %>" value="<%=p.id%>" >
           <%= no %>)

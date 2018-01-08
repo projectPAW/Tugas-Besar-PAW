@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   delete 'edit_student/:noinduk', to: 'student#delete' #delete user
   get 'reset_password_student', to:'student#resetPassword'
   post 'reset_password_student',to:'student#reset'
-  get 'show_nilai/:noinduk', to: 'nilai#showNilai'
+  get 'show_nilai/:noinduk', to: 'nilai#showNilai', as: :showNilai
   get 'show_print/:noinduk', to: 'nilai#showPrint', as: :showPrint
   get 'profil', to: 'student#profil'
 
