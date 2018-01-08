@@ -58,6 +58,6 @@ class StudentController < ApplicationController
 
 	private
 	def user_params #method menyimpan data
-		params.permit(:noinduk, :nama, :jenkel, :kelas, :jurusan, :sekolah, :username, :password)
+		params.require(:user).permit(:noinduk, :nama, :jenkel, :kelas, :jurusan, :sekolah, :username, :password)
 	end
 end
