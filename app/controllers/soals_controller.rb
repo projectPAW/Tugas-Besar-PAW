@@ -1,12 +1,12 @@
 class SoalsController < ApplicationController
-	def new
-		@soal = Soal.new
-		@so = Soal.all
+	def list
+		@soal = Soal.all.order(:jurusan)
 		render layout: 'guru'
 	end
 
-	def list
-		@soal = Soal.all.order(:jurusan)
+	def new
+		@soal = Soal.new
+		@so = Soal.all
 		render layout: 'guru'
 	end
 

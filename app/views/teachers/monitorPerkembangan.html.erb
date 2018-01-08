@@ -5,7 +5,7 @@
 		<% @cekStudent.each do |f| %>
 		<div>
 			<% x = f.noinduk %>
-			<%= link_to "#{f.nama}", showNilai_path(x), style: 'width: 30%', class: 'btn btn-secondary' %>
+			<%= link_to "#{f.nama}", showMonitor_path(x), style: 'width: 30%', class: 'btn btn-secondary' %>
 		 </div>
 		<% end %>
 
