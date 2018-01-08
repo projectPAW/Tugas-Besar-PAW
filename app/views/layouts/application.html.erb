@@ -49,15 +49,11 @@
 		   				</li>
 
 		   				<li class="nav-item">
-		   					<a href="#" class="nav-link">Perkembangan</a>
+		   					<a href="show_nilai/<%= user.noinduk %>" class="nav-link">Perkembangan</a>
 		   				</li>
 
 		   				<li class="nav-item">
-		   					<a href="show_nilai/<%= user.noinduk %>" class="nav-link">Grades</a>
-		   				</li>
-
-		   				<li class="nav-item">
-		   					<a href="#" class="nav-link">Setting</a>
+		   					<a href="/profil" class="nav-link">Profil</a>
 		   				</li>
     		</ul>
 		    <ul class="navbar-nav" style="margin-right: 7%">
@@ -71,7 +67,6 @@
 					      </a>
 					      <div class="dropdown-menu">
 					      	<a class="dropdown-item" href="profil">Profil</a>
-					        <a class="dropdown-item" href="setting">Setting</a>
 					        <hr>
 					        <a class="dropdown-item" href="reset_password_student">Reset Password</a>
 					        <%= link_to "Logout", logout_path, method: :delete, class:"dropdown-item" %>

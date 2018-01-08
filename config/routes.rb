@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   post 'reset_password_student',to:'student#reset'
   get 'show_nilai/:noinduk', to: 'nilai#showNilai'
   get 'show_print/:noinduk', to: 'nilai#showPrint', as: :showPrint
+  get 'profil', to: 'student#profil'
 
   get 'dashboardIPA', to: 'student#dashboardIPA'
   get 'simulasiIPA', to: 'soals#simulasiIPA'
