@@ -28,32 +28,33 @@
     	<ul class="navbar-nav">
 		   				<li class="nav-item">
 		   						<% user = current_user %>
-								<% if user.jurusan == 'IPA' %>
-									<a href="materiIPA" class="nav-link">Materi</a>
-								<% elsif user.jurusan == 'IPS' %>
-									<a href="materiIPS" class="nav-link">Materi</a>
-								<% elsif user.jurusan == 'Bahasa' %>
-									<a href="materiBahasa" class="nav-link">Materi</a>
+									<% if user.jurusan == 'IPA' %>
+										<%= link_to "Materi", materiIPA_path, class:'nav-link' %>
+									<% elsif user.jurusan == 'IPS' %>
+										<%= link_to "Materi", materiIPS_path, class:'nav-link' %>
+									<% elsif user.jurusan == 'Bahasa' %>
+										<%= link_to "Materi", materiBahasa_path, class:'nav-link' %>
 								<% end %>
 		   				</li>
 
 		   				<li class="nav-item">
 		   						<% user = current_user %>
-								<% if user.jurusan == 'IPA' %>
-									<a href="simulasiIPA" class="nav-link">Simulasi</a>
-								<% elsif user.jurusan == 'IPS' %>
-									<a href="simulasiIPS" class="nav-link">Simulasi</a>
-								<% elsif user.jurusan == 'Bahasa' %>
-									<a href="simulasiBahasa" class="nav-link">Simulasi</a>
+									<% if user.jurusan == 'IPA' %>
+										<%= link_to "Simulasi", simulasiIPA_path, class:'nav-link' %>
+									<% elsif user.jurusan == 'IPS' %>
+										<%= link_to "Simulasi", simulasiIPS_path, class:'nav-link' %>
+									<% elsif user.jurusan == 'Bahasa' %>
+										<%= link_to "Simulasi", simulasiBahasa_path, class:'nav-link' %>
 								<% end %>
 		   				</li>
 
 		   				<li class="nav-item">
-		   					<a href="show_nilai/<%= user.noinduk %>" class="nav-link">Perkembangan</a>
+		   					<% x = user.noinduk%>
+		   					<%= link_to "Perkembangan", showNilai_path(x), class:'nav-link' %>
 		   				</li>
 
 		   				<li class="nav-item">
-		   					<a href="/profil" class="nav-link">Profil</a>
+		   					<%= link_to "Profil", profil_path, class:'nav-link' %>
 		   				</li>
     		</ul>
 		    <ul class="navbar-nav" style="margin-right: 7%">
